@@ -1,0 +1,16 @@
+{
+	"name": "tpl-gh-app",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+	"mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.config/gh,target=/home/node/.config/gh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.aws,target=/node/.aws,type=bind,consistency=cached"
+    ],
+	"postCreateCommand": "npm install -g npm"
+	// "postStartCommand": "npm start"
+}
