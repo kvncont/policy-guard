@@ -1,5 +1,5 @@
 {
-	"name": "tpl-gh-app",
+	"name": "policy-guard",
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 	"features": {
 		"ghcr.io/devcontainers/features/aws-cli:1": {},
@@ -11,6 +11,6 @@
         "source=${localEnv:HOME}/.config/gh,target=/home/node/.config/gh,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.aws,target=/node/.aws,type=bind,consistency=cached"
     ],
-	"postCreateCommand": "npm install -g npm"
-	// "postStartCommand": "npm start"
+	"postCreateCommand": "npm install -g npm",
+	"postStartCommand": "npm start"
 }
